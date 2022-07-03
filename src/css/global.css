@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.vs-panel {
+    background-color: #333333;
+}
+
+.vs-explorer {
+    background-color: #252526;
+}
+
+.vs-editor {
+    background-color: #1d1d1d;
+}
+
+.vs-bottom {
+    background-color: #007acc;
+}
+
+.vs-top {
+    background-color: #323233;
+}
+
+.vs-tab-bg {
+    background-color: #252526;
+}
+
+.vs-tabs-false {
+    background-color: #2d2d2d;
+}
+
+.vs-tabs-true {
+    background-color: #1e1e1e;
+}
