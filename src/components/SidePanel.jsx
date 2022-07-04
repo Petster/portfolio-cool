@@ -1,3 +1,4 @@
+import { faGithub, faYoutube, faTwitch, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faCopy, faFolder } from '@fortawesome/free-regular-svg-icons';
 import { faCircleUser, faCodeBranch, faGear, faMagnifyingGlass, faPlay, faTableCellsLarge } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,41 +8,41 @@ const SidePanel = () => {
 
     const sidePanel = [
         {
-          icon: faCopy,
-          flip: false
+          icon: faGithub,
+          url: "http://github.com/petster"
         },
         {
-          icon: faMagnifyingGlass,
-          flip: true
+          icon: faYoutube,
+          url: "https://www.youtube.com/petstergaming"
         },
         {
-          icon: faCodeBranch,
-          flip: false
+          icon: faTwitter,
+          url: "https://twitter.com/Petsterr"
         },
         {
-          icon: faPlay,
-          flip: false
+          icon: faTwitch,
+          url: "https://twitch.tv/petster"
         },
         {
-          icon: faTableCellsLarge,
-          flip: false
+          icon: faLinkedin,
+          url: "https://linkedin.com/in/jasontpalmeri"
         },
         {
-          icon: faFolder,
-          flip: false
+          icon: faInstagram,
+          url: "https://www.instagram.com/petster12/"
         }
     ];
 
   return (
     <div className='vs-panel w-10 flex flex-col font-normal text-white text-2xl content-center items-center p-2 gap-1.5'>
             {sidePanel.map((da, index) =>
-              <div className='text-zinc-400 hover:text-zinc-100 cursor-pointer p-1.5' key={index}><FontAwesomeIcon className={`${da.flip ? "fa-flip-horizontal" : ""}`} icon={da.icon}/></div>
+              <a target="_blank" href={da.url} className='text-zinc-400 hover:text-zinc-100 cursor-pointer p-1.5' key={index}><span className='sr-only'>{da.url}</span><FontAwesomeIcon icon={da.icon}/></a>
             )}
             <div className='flex flex-grow'></div>
-            <div className='text-zinc-400 hover:text-zinc-100'>
+            <div className='text-zinc-400 hover:text-zinc-100 cursor-pointer'>
               <FontAwesomeIcon icon={faCircleUser} />
             </div>
-            <div className='text-zinc-400 hover:text-zinc-100'>
+            <div className='text-zinc-400 hover:text-zinc-100 cursor-pointer'>
               <FontAwesomeIcon icon={faGear} />
             </div>
         </div>

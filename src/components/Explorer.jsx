@@ -10,6 +10,7 @@ const Explorer = () => {
 
     const [folderState, setFolderState] = useState(true);
     const explorerPanels = ['OUTLINE', 'TIMELINE', 'MYSQL'];
+    const componentsFolder = ['Content', 'Explorer', 'ExplorerItem', 'FolderLayout', 'Layout', 'LineHeight', 'SidePanel', 'TabLayout', 'Tabs', 'WindowMenu'];
 
     return (
       <div className='flex flex-grow flex-col select-none'>
@@ -25,17 +26,16 @@ const Explorer = () => {
             <FolderLayout title='node_modules' color='text-green-400' initState={false} padding='pl-5' />
             <FolderLayout title='src' color='text-green-400' initState={true} padding='pl-5'>
               <FolderLayout title='components' color='text-yellow-400' initState={false} padding='pl-7'>
-                <ExplorerItem title='Explorer.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
-                <ExplorerItem title='ExplorerItem.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
-                <ExplorerItem title='FolderLayout.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
-                <ExplorerItem title='Layout.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
-                <ExplorerItem title='SidePanel.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
-                <ExplorerItem title='WindowMenu.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
+                {componentsFolder.map((da, index) =>
+                  <ExplorerItem title={`${da}.jsx`} icon={faReact} color='text-cyan-500' padding='pl-12' />
+                )}
               </FolderLayout>
               <FolderLayout title='css' color='text-teal-400' initState={false} padding='pl-7'>
                 <ExplorerItem title='global.css' icon={faCss3} color='text-cyan-500' padding='pl-12' />
               </FolderLayout>
               <FolderLayout title='img' color='text-teal-400' initState={false} padding='pl-7'>
+                <ExplorerItem title='2021_deans.png' icon={faImage} color='text-emerald-300' padding='pl-12' />
+                <ExplorerItem title='myface.jpg' icon={faImage} color='text-emerald-300' padding='pl-12' />
                 <ExplorerItem title='vscode.png' icon={faImage} color='text-emerald-300' padding='pl-12' />
               </FolderLayout>
               <FolderLayout title='pages' color='text-orange-600' initState={true} padding='pl-7'>

@@ -3,6 +3,7 @@ import { faCubes, faEllipsisVertical, faMinus, faX } from '@fortawesome/free-sol
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import vscode from '../img/vscode.png'
+import windowmenuextra from '../img/windowmenuextra.png'
 
 const WindowMenu = () => {
 
@@ -38,11 +39,7 @@ const WindowMenu = () => {
             <p>Portfolio.jsx - Jason Palmeri - Visual Studio Code</p>
         </div>
         <div className='flex content-center justify-center items-center'>
-            {windowLayoutMenu.reverse().map((da, index) =>
-                <div key={index} className='p-1 hover:bg-zinc-700 rounded-md'>
-                <FontAwesomeIcon icon={da} />
-                </div>
-            )}
+            <img src={windowmenuextra} alt="" width={120} />
             {windowMenu.reverse().map((da, index) =>
                 <div key={index} className={`${da.background} hover:text-zinc-100 p-4 w-12 text-center`}>
                 <FontAwesomeIcon icon={da.icon} />
