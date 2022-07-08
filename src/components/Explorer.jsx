@@ -10,7 +10,7 @@ const Explorer = () => {
 
     const [folderState, setFolderState] = useState(true);
     const explorerPanels = ['OUTLINE', 'TIMELINE', 'MYSQL'];
-    const componentsFolder = ['Content', 'Explorer', 'ExplorerItem', 'FolderLayout', 'Layout', 'LineHeight', 'SidePanel', 'TabLayout', 'Tabs', 'WindowMenu'];
+    const componentsFolder = ['Bottom', 'Content', 'Explorer', 'ExplorerItem', 'FolderLayout', 'Layout', 'SidePanel', 'TabLayout', 'Tabs', 'WindowMenu'];
 
     return (
       <div className='flex flex-grow flex-col select-none'>
@@ -18,7 +18,7 @@ const Explorer = () => {
           <div><p className='text-xs'>EXPLORER</p></div>
           <div className='hover:bg-zinc-700 rounded-md px-0.5 py-0 cursor-pointer'><FontAwesomeIcon icon={faEllipsis} /></div>
         </div>
-        <div className='flex flex-col flex-grow'>
+        <div className='flex flex-col flex-grow h-96 overflow-y-scroll' id='explorer'>
           <div onClick={() => setFolderState(!folderState)} className='text-zinc-200 font-bold text-xs pl-1 py-0.5 cursor-pointer'>
             <FontAwesomeIcon className='pr-1' icon={folderState ? faAngleDown : faAngleRight} /> PORTFOLIO
           </div>
@@ -32,6 +32,9 @@ const Explorer = () => {
               </FolderLayout>
               <FolderLayout title='css' color='text-teal-400' initState={false} padding='pl-7'>
                 <ExplorerItem title='global.css' icon={faCss3} color='text-cyan-500' padding='pl-12' />
+              </FolderLayout>
+              <FolderLayout title='data' color='text-yellow-400' initState={false} padding='pl-7'>
+                <ExplorerItem title='ContentData.jsx' icon={faReact} color='text-cyan-500' padding='pl-12' />
               </FolderLayout>
               <FolderLayout title='img' color='text-teal-400' initState={false} padding='pl-7'>
                 <ExplorerItem title='2021_deans.png' icon={faImage} color='text-emerald-300' padding='pl-12' />

@@ -4,8 +4,7 @@ import SidePanel from './SidePanel'
 import Tabs from './Tabs'
 import WindowMenu from './WindowMenu'
 import { useLocation } from 'react-router'
-import LineHeight from './LineHeight'
-import Content from './Content'
+import Bottom from './Bottom'
 
 const Layout = ({children}) => {
 
@@ -32,7 +31,7 @@ const Layout = ({children}) => {
     }
 
   return (
-    <div className='min-h-screen flex flex-col select-none'>
+    <div className='hidden lg:flex min-h-screen flex-col select-none'>
       <WindowMenu />
       <div className='flex flex-row flex-grow'>
         <SidePanel />
@@ -48,16 +47,14 @@ const Layout = ({children}) => {
                     <p>src &gt; pages &gt; {current}.jsx</p>
                 </div>
               </div>
-              <div id='editor' className='flex flex-grow overflow-y-scroll h-96 flex-row vs-editor'>
+              <div id='editor' className='flex flex-grow overflow-y-scroll h-96 flex-col vs-editor'>
                 {children}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className='h-5 vs-bottom'>
-
-      </div>
+      <Bottom />
     </div>
   )
 }

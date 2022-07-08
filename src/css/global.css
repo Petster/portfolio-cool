@@ -38,6 +38,38 @@
     border-right: 1px solid;
 }
 
+#explorer::-webkit-scrollbar-track
+{
+	background-color: transprent;
+}
+
+#explorer::-webkit-scrollbar
+{
+	width: 0px;
+	background-color: transparent;
+}
+
+#explorer::-webkit-scrollbar-thumb
+{
+	background-color: transparent
+}
+
+#explorer:hover::-webkit-scrollbar-track
+{
+	background-color: #252526;
+}
+
+#explorer:hover::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #1e1e1e;
+}
+
+#explorer:hover::-webkit-scrollbar-thumb
+{
+	background-color: #424242;
+}
+
 #editor::-webkit-scrollbar-track
 {
 	background-color: #1e1e1e;
@@ -56,4 +88,33 @@
 
 .about-text {
     width: 40rem;
+}
+
+.Typewriter__cursor{
+    -webkit-animation:Typewriter-cursor 1s infinite;
+    animation:Typewriter-cursor 1s infinite;
+    margin-left:1px;
+}
+
+@-webkit-keyframes Typewriter-cursor{
+    0%{
+        opacity:0
+    }
+    50%{
+        opacity:1
+    }
+    100%{
+        opacity:0
+    }
+}
+@keyframes Typewriter-cursor{
+    0%{
+        opacity:0
+    }
+    50%{
+        opacity:1
+    }
+    100%{
+        opacity:0
+    }
 }

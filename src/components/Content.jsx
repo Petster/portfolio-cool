@@ -1,20 +1,20 @@
 import React from 'react'
-import LineHeight from './LineHeight'
 
-const Content = ({children, optional_children, lines}) => {
-  return (
-    <>
-    <div className='w-20 flex h-full flex-col content-center items-center gap-1.5 pt-4'>
-        <LineHeight lines={lines} />
-    </div>
-    <div className='p-4 pl-0 flex text-white text-sm'>
-        {children}
-    </div>
-    <div className={`w-32 flex flex-grow vs-editor ${optional_children ? "" : "hidden"}`}>
-        {optional_children}
-    </div>
-    </>
-  )
+const Content = ({sentences}) => {
+  let output = [];
+  for(let x = 0; x < sentences.length; x++) {
+    let sentence = sentences[x].display;
+    let padding = sentences[x].tabs;
+    output.push(
+      <div className='flex flex-row gap-5 text-white text-sm '>
+        <div className='text-end w-16 text-zinc-500 font-bold'>{x+1}</div>
+        <div className={`${padding}`}>
+          <p>{sentence} {sentences[x].cursor ? (<span className='Typewriter__cursor'>|</span>) : ""}</p>
+        </div>
+      </div>
+    )
+  }
+  return output
 }
 
 export default Content
