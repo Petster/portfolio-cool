@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons';
 
 const TabLayout = ({title, url}) => {
-
   return (
     <NavLink to={url} className={({isActive}) => `cursor-pointer p-1.5 px-4 flex flex-row items-center ${isActive ? "vs-tabs-true text-orange-200" : "vs-tabs-false text-green-400"}`}>
         <p className={`mr-3`}>{title}</p>
