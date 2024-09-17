@@ -1,8 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodeBranch, faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
+import {useLineNumber} from "../context/LineNumberContext";
 
 const Bottom = () => {
+const { lineNumber } = useLineNumber();
   return (
     <div className='px-4 text-white vs-bottom flex flex-row content-center items-center justify-center'>
         <div className='flex flex-row gap-2'>
@@ -16,7 +18,7 @@ const Bottom = () => {
         </div>
         <div className='flex-grow'></div>
         <div className='flex flex-row'>
-            <div className='hover:bg-blue-400 px-2 cursor-pointer'>Ln 10, Col 15</div>
+            <div className='hover:bg-blue-400 px-2 cursor-pointer'>Ln {lineNumber || "10"}, Col 15</div>
             <div className='hover:bg-blue-400 px-2 cursor-pointer'>Spaces: 4</div>
             <div className='hover:bg-blue-400 px-2 cursor-pointer'>UTF-8</div>
             <div className='hover:bg-blue-400 px-2 cursor-pointer'>CRLF</div>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    overflow-y: hidden;
+}
+
 .vs-panel {
     background-color: #333333;
 }
@@ -116,5 +120,19 @@
     }
     100%{
         opacity:0
+    }
+}
+
+@layer utilities {
+    .masonry-3-col {
+        column-count: 3;
+        column-gap: 0.25em;
+    }
+    .masonry-2-col {
+        column-count: 2;
+        column-gap: 0.25em;
+    }
+    .break-inside {
+        break-inside: avoid;
     }
 }

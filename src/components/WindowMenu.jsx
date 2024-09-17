@@ -1,11 +1,14 @@
 import { faSquare, faWindowRestore } from '@fortawesome/free-regular-svg-icons';
 import { faCubes, faEllipsisVertical, faMinus, faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
+import React, {useEffect} from 'react'
 import vscode from '../img/vscode.png'
 import windowmenuextra from '../img/windowmenuextra.png'
+import {useWindowMenu} from "../context/WindowMenuContext";
+import {useLineNumber} from "../context/LineNumberContext";
 
 const WindowMenu = () => {
+    const { currentPage } = useWindowMenu();
 
     const topMenu = ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help'];
     const windowLayoutMenu = [faCubes, faEllipsisVertical, faWindowRestore, faWindowRestore, faWindowRestore];
@@ -36,7 +39,7 @@ const WindowMenu = () => {
             )}
         </div>
         <div className='justify-center text-center font-normal flex flex-grow'>
-            <p>Portfolio.jsx - Jason Palmeri - Visual Studio Code</p>
+            <p className={'truncate'}>{currentPage} - Jason Palmeri - Visual Studio Code</p>
         </div>
         <div className='flex content-center justify-center items-center'>
             <img src={windowmenuextra} alt="" width={120} />

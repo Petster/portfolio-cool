@@ -12,19 +12,25 @@ import About from './pages/About';
 import Connect from './pages/Connect';
 import Index from './pages/Index';
 import Portfolio from './pages/Portfolio';
+import {LineNumberProvider} from "./context/LineNumberContext";
+import {WindowMenuProvider} from "./context/WindowMenuContext";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route exact path='/' element={<Index/>}/>
-            <Route exact path='/about' element={<About/>}/>
-            <Route exact path='/portfolio' element={<Portfolio/>}/>
-            <Route exact path='/connect' element={<Connect/>}/>
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <LineNumberProvider>
+          <WindowMenuProvider>
+          <BrowserRouter>
+            <Layout>
+              <Routes>
+                    <Route exact path='/' element={<Index/>}/>
+                    <Route exact path='/about' element={<About/>}/>
+                    <Route exact path='/portfolio' element={<Portfolio/>}/>
+                    <Route exact path='/connect' element={<Connect/>}/>
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+          </WindowMenuProvider>
+      </LineNumberProvider>
   )
 }
 
