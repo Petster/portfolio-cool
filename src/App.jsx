@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -19,7 +19,7 @@ const App = () => {
   return (
       <LineNumberProvider>
           <WindowMenuProvider>
-          <BrowserRouter>
+          <HashRouter>
             <Layout>
               <Routes>
                     <Route exact path='/' element={<Index/>}/>
@@ -28,7 +28,7 @@ const App = () => {
                     <Route exact path='/connect' element={<Connect/>}/>
               </Routes>
             </Layout>
-          </BrowserRouter>
+          </HashRouter>
           </WindowMenuProvider>
       </LineNumberProvider>
   )
